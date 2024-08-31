@@ -1,0 +1,25 @@
+# Exemplo de dados de faturamento diário de um mês
+faturamento_diario = [
+    2000, 1500, 0, 0, 2300, 1000, 4500, 500, 800, 0, 0, 3200, 700, 1500, 
+    1800, 0, 0, 1000, 2100, 1300, 4000, 3200, 0, 0, 2200, 3000, 4500, 
+    2000, 0, 1000
+]
+
+# Calcula o menor valor de faturamento diário não nulo
+menor_faturamento = min([x for x in faturamento_diario if x > 0])
+
+# Calcula o maior valor de faturamento diário
+maior_faturamento = max(faturamento_diario)
+
+# Calcula a média mensal considerando apenas dias com faturamento
+faturamento_total = sum(faturamento_diario)
+dias_com_faturamento = len([x for x in faturamento_diario if x > 0])
+media_mensal = faturamento_total / dias_com_faturamento
+
+# Calcula o número de dias com faturamento superior à média mensal
+dias_acima_da_media = len([x for x in faturamento_diario if x > 0 and x > media_mensal])
+
+# Exibe os resultados
+print(f"Menor faturamento ocorrido em um dia do mês: R$ {menor_faturamento:.2f}")
+print(f"Maior faturamento ocorrido em um dia do mês: R$ {maior_faturamento:.2f}")
+print(f"Número de dias com faturamento superior à média mensal: {dias_acima_da_media} dias")
